@@ -7,17 +7,17 @@ import com.example.springbootblogapplication.services.FileService;
 import com.example.springbootblogapplication.services.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.util.Optional;
-
 @Controller
 @RequiredArgsConstructor
 @Slf4j
@@ -100,19 +100,37 @@ public class PostController {
 
     @GetMapping("/posts/{id}/edit")
     @PreAuthorize("isAuthenticated()")
-    public String getPostForEdit(@PathVariable Long id, Model model) {
+    public String getPostForEdit(@PathVariable Long id, Model model, Principal principal) {
+
+        String authUsername = "anonymousUser";
+        if (principal != null) {
+            authUsername = principal.getName();
+        }
 
         // find post by id
         Optional<Post> optionalPost = postService.getById(id);
-        // if post exist put it in model
+
+        // if post exist and belongs to the authenticated user, put it in model
         if (optionalPost.isPresent()) {
             Post post = optionalPost.get();
-            model.addAttribute("post", post);
-            return "post_edit";
+
+            // Check if the post belongs to the authenticated user
+            if (post.getAccount().getEmail().equals(authUsername)) {
+                model.addAttribute("post", post);
+                return "post_edit";
+            } else {
+                return "403"; // You can customize this to handle unauthorized access
+            }
         } else {
             return "404";
         }
     }
+
+    // add a new method to check if the current user is the author of the post
+
+
+
+
 
     @GetMapping("/posts/{id}/delete")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
