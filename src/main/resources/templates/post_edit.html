@@ -39,19 +39,19 @@
           method="post">
         <input type="hidden" th:field="*{createdAt}" />
         <h2>Update Post</h2>
-        <img th:src="@{'/images/' + *{imageFilePath}}" height="200px" class="img-fluid" />
-        <div>
-            <input id="input-file" type="file" name="file" class="btn btn-outline-info" accept="image/png, image/jpeg, image/jpg, image/bmp" />
+        <div class="mb-3">
+            <img th:src="@{'/images/' + *{imageFilePath}}" height="200px" class="img-fluid" />
+            <input id="input-file" type="file" name="file" class="form-control-file" accept="image/png, image/jpeg, image/jpg, image/bmp" />
         </div>
-        <div>
-            <label for="new-post-title">Title</label>
-            <input id="new-post-title" type="text" th:field="*{title}" placeholder="Title"/>
+        <div class="mb-3">
+            <label for="new-post-title" class="form-label">Title</label>
+            <input id="new-post-title" type="text" th:field="*{title}" placeholder="Title" class="form-control"/>
         </div>
-        <div>
-            <label for="new-post-body">Body</label>
-            <textarea id="new-post-body" th:field="*{body}"></textarea>
+        <div class="mb-3">
+            <label for="new-post-body" class="form-label">Body</label>
+            <textarea id="new-post-body" th:field="*{body}" class="form-control"></textarea>
         </div>
-        <button type="submit">Update Post</button>
+        <button type="submit" class="btn btn-primary">Update Post</button>
     </form>
 </div>
 
