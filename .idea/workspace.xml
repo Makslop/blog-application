@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="Migration is working">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
@@ -15,8 +15,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__initial_migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1__initial_migration.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Student works/УРОКИ/FINAL JAVA/final&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Max/Desktop/spring-boot-blog-application-main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -128,6 +126,8 @@
       <workItem from="1703173019622" duration="2713000" />
       <workItem from="1703238202814" duration="1621000" />
       <workItem from="1703335606888" duration="4645000" />
+      <workItem from="1703509281671" duration="188000" />
+      <workItem from="1703509579535" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="Migration is working">
       <option name="closed" value="true" />
