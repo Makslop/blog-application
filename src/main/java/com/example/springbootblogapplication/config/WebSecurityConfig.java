@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
-
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
 
 @Configuration
@@ -17,37 +16,38 @@ import static org.springframework.security.web.util.matcher.AntPathRequestMatche
 @EnableMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig {
 
-
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        // Note: spring security requestMatchers updated again
-        // https://stackoverflow.com/questions/76809698/spring-security-method-cannot-decide-pattern-is-mvc-or-not-spring-boot-applicati
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> {
-                        auth.requestMatchers(antMatcher("/css/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/js/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/images/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/fonts/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/webjars/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/")).permitAll();
-                        auth.requestMatchers(antMatcher("/rss/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/register/**")).permitAll();
-                        auth.requestMatchers(antMatcher("/posts/**")).permitAll();
-                        auth.requestMatchers(PathRequest.toH2Console()).permitAll();
-                        auth.anyRequest().authenticated();
+                .authorizeRequests(auth -> {
+                    auth
+                            .requestMatchers(antMatcher("/css/**")).permitAll()
+                            .requestMatchers(antMatcher("/js/**")).permitAll()
+                            .requestMatchers(antMatcher("/images/**")).permitAll()
+                            .requestMatchers(antMatcher("/fonts/**")).permitAll()
+                            .requestMatchers(antMatcher("/webjars/**")).permitAll()
+                            .requestMatchers(antMatcher("/")).permitAll()
+                            .requestMatchers(antMatcher("/rss/**")).permitAll()
+                            .requestMatchers(antMatcher("/register/**")).permitAll()
+                            .requestMatchers(antMatcher("/posts/**")).permitAll()
+                            .requestMatchers(PathRequest.toH2Console()).permitAll()
+                            .anyRequest().authenticated();
                 })
-
                 .formLogin(form -> form
-                    .loginPage("/login")
-                    .loginProcessingUrl("/login")
-                    .usernameParameter("email")
-                    .passwordParameter("password")
-                    .defaultSuccessUrl("/")
-                    .failureUrl("/login?error")
-                    .permitAll()
+                        .loginPage("/login")
+                        .loginProcessingUrl("/login")
+                        .usernameParameter("email")
+                        .passwordParameter("password")
+                        .defaultSuccessUrl("/")
+                        .failureUrl("/login?error")
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/")
+                        .permitAll()
                 );
-
 
         return http.build();
     }

@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="Migration is working">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post_new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/post_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +97,21 @@
       </method>
     </configuration>
     <configuration name="SpringBootBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/corretto-17.0.6" />
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="spring-boot-blog-application" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springbootblogapplication.SpringBootBlogApplication" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +142,7 @@
       <workItem from="1703238202814" duration="1621000" />
       <workItem from="1703335606888" duration="4645000" />
       <workItem from="1703509281671" duration="188000" />
-      <workItem from="1703509579535" duration="321000" />
+      <workItem from="1703509579535" duration="5229000" />
     </task>
     <task id="LOCAL-00001" summary="Migration is working">
       <option name="closed" value="true" />
@@ -137,7 +152,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703336929816</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Migration is working">
+      <option name="closed" value="true" />
+      <created>1703510350555</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703510350555</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Migration is working">
+      <option name="closed" value="true" />
+      <created>1703510742042</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703510742042</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Migration is working">
+      <option name="closed" value="true" />
+      <created>1703512007767</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703512007767</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
