@@ -6,13 +6,12 @@ CREATE TABLE IF NOT EXISTS post
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
     account_id BIGINT NOT NULL
-);
-
+    );
 
 CREATE TABLE IF NOT EXISTS authority
 (
     name VARCHAR(16) PRIMARY KEY
-);
+    );
 
 CREATE TABLE IF NOT EXISTS account
 (
@@ -23,12 +22,13 @@ CREATE TABLE IF NOT EXISTS account
     last_name VARCHAR(255),
     created_at TIMESTAMP,
     updated_at TIMESTAMP
-);
-
+    );
 
 CREATE TABLE IF NOT EXISTS account_authority
 (
     account_id BIGINT,
-    PRIMARY KEY(account_id),
-    authority_name VARCHAR(16)
-);
+    authority_name VARCHAR(16),
+    PRIMARY KEY(account_id, authority_name),
+    FOREIGN KEY (account_id) REFERENCES account(id),
+    FOREIGN KEY (authority_name) REFERENCES authority(name)
+    );
