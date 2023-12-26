@@ -11,6 +11,16 @@
     <script th:src="@{'https://code.jquery.com/jquery-3.6.0.min.js'}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <title>Blog :: Post</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: navy;
+        }
+
+    </style>
 </head>
 <header style="background-color: #F8F9FA">
     <div class="container">
@@ -48,17 +58,23 @@
         <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/edit'}">Edit</a></li>
         <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/delete'}">Delete</a></li>
     </ul>
-    <div th:each="comment : ${post.comments}" style="margin-bottom: 20px">
-        <div class="card mt-3">
-            <div class="card-body">
-                <p th:text="${comment.text}"></p>
-                <p th:text="${comment.createdAt}"></p>
-
-                <p th:text="'Author: ' + ${comment.account.email}"></p>
-
-
-
-
+    <div class = "container" style="border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h3>Comments : </h3>
+        <div th:each="comment : ${post.comments}" style="margin-bottom: 20px">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <a th:text="'Author: ' + ${comment.account.firstName} + ' ' + ${comment.account.lastName}"
+                       th:href="@{'/profiles/' + ${comment.account.id}}"
+                       style="transition: color 0.3s;">
+                    </a>
+                    <p th:text="${comment.text}"></p>
+                    <small class="text-muted mb-2" th:if="${comment.createdAt}">
+                        Commented: <span th:text="${#temporals.format(comment.createdAt, 'dd MMM yyyy HH:mm')}"></span>
+                    </small>
+                </div>
             </div>
         </div>
     </div>
