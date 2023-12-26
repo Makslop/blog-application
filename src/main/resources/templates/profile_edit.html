@@ -98,8 +98,8 @@
                     <div class="avatar">
                         <!-- Replace 'path/to/avatar.jpg' with the actual path to the user's avatar -->
                         <img th:src="@{'/images/' + *{avatarFilePath}}"  alt="Avatar">
-                        <input id="input-file" type="file" name="file" class="form-control-file mt-1" accept="image/png, image/jpeg, image/jpg, image/bmp" />
                     </div>
+                    <input id="input-file" type="file" name="file" class="form-control-file btn-info" accept="image/png, image/jpeg, image/jpg, image/bmp" />
                 </div>
                 <div class="info-container">
                     <label for="profile-first-name" class="form-label">First Name</label>

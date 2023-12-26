@@ -32,7 +32,6 @@ public class   WebSecurityConfig {
                             .requestMatchers(antMatcher("/register/**")).permitAll()
                             .requestMatchers(antMatcher("/posts/**")).permitAll()
                             .requestMatchers("/profile/**").permitAll()
-                            .requestMatchers(PathRequest.toH2Console()).permitAll()
                             .anyRequest().authenticated();
                 })
                 .formLogin(form -> form
