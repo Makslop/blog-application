@@ -70,6 +70,25 @@ public class ProfileController {
             return "404";
         }
     }
+    @GetMapping("/myprofile")
+    @PreAuthorize("isAuthenticated()")
+    public String myProfile(Model model, Principal principal) {
+        String authUsername = "anonymousUser";
+        if (principal != null) {
+            authUsername = principal.getName();
+        }
+        Optional<Account> optionalProfile = accountService.findOneByEmail(authUsername);
+        if (optionalProfile.isPresent()) {
+            Account profile = optionalProfile.get();
+            Long profileId = profile.getId();
+
+            // Редирект на страницу /profile/id
+            return "redirect:/profile/" + profileId;
+        }
+
+        // Если аккаунт не найден, вернуть страницу с информацией об отсутствии профиля
+        return "404";
+    }
 
     @PostMapping("/profile/{id}")
     @PreAuthorize("isAuthenticated()")
