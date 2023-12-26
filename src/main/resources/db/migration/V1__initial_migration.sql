@@ -6,12 +6,12 @@ CREATE TABLE IF NOT EXISTS post
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
     account_id BIGINT NOT NULL
-    );
+);
 
 CREATE TABLE IF NOT EXISTS authority
 (
     name VARCHAR(16) PRIMARY KEY
-    );
+);
 
 CREATE TABLE IF NOT EXISTS account
 (
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS account
     last_name VARCHAR(255),
     created_at TIMESTAMP,
     updated_at TIMESTAMP
-    );
+);
 
 CREATE TABLE IF NOT EXISTS account_authority
 (
@@ -31,4 +31,16 @@ CREATE TABLE IF NOT EXISTS account_authority
     PRIMARY KEY(account_id, authority_name),
     FOREIGN KEY (account_id) REFERENCES account(id),
     FOREIGN KEY (authority_name) REFERENCES authority(name)
-    );
+);
+CREATE TABLE IF NOT EXISTS comment
+(
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(5000),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    post_id BIGINT NOT NULL,
+    account_id BIGINT NOT NULL,
+    FOREIGN KEY (post_id) REFERENCES post(id),
+    FOREIGN KEY (account_id) REFERENCES account(id)
+);
+

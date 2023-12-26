@@ -48,6 +48,39 @@
         <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/edit'}">Edit</a></li>
         <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/delete'}">Delete</a></li>
     </ul>
+    <div th:each="comment : ${post.comments}" style="margin-bottom: 20px">
+        <div class="card mt-3">
+            <div class="card-body">
+                <p th:text="${comment.text}"></p>
+                <p th:text="${comment.createdAt}"></p>
+
+                <p th:text="'Author: ' + ${comment.account.email}"></p>
+
+                <ul class="nav">
+                    <li class="nav-item" sec:authorize="hasRole('ROLE_USER') and ${comment.account.email eq principal?.name}">
+                        <a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/comments/' + ${comment.id} + '/edit'}">Edit</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="hasRole('ROLE_USER') and ${comment.account.email eq principal?.name}">
+                        <a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/comments/' + ${comment.id} + '/delete'}">Delete</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#commentForm" aria-expanded="false" aria-controls="commentForm" style="margin-top: 20px; margin-bottom: 20px">
+        Write a Comment
+    </button>
+    <div class="collapse mt-3" id="commentForm" style="margin-bottom: 20px">
+        <form th:action="@{'/posts/' + ${post.id} + '/comments/new'}" method="post" sec:authorize="isAuthenticated()">
+            <div class="mb-3">
+                <label for="commentTextCollapse" class="form-label">Add a Comment:</label>
+                <textarea class="form-control" id="commentTextCollapse" name="commentText" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </form>
+    </div>
 
 </div>
 
