@@ -37,23 +37,32 @@
     <form action="#" th:action="@{/register}" th:object="${account}" method="POST">
         <div class="mb-3">
             <label for="firstname" class="form-label">First Name:</label>
-            <input id="firstname" type="text" th:field="*{firstName}" class="form-control" placeholder=""/>
+            <input id="firstname" type="text" th:field="*{firstName}" class="form-control" placeholder="" pattern="[A-Z][a-z]*"
+                   title="First name must start with an uppercase letter" required />
+            <small class="form-text text-muted">First name must start with an uppercase letter.</small>
         </div>
         <div class="mb-3">
             <label for="lastname" class="form-label">Last Name:</label>
-            <input id="lastname" type="text" th:field="*{lastName}" class="form-control" placeholder=""/>
+            <input id="lastname" type="text" th:field="*{lastName}" class="form-control" placeholder="" pattern="[A-Z][a-z]*"
+                   title="Last name must start with an uppercase letter" required />
+            <small class="form-text text-muted">Last name must start with an uppercase letter.</small>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input id="email" type="text" th:field="*{email}" class="form-control" placeholder=""/>
+            <input id="email" type="email" th:field="*{email}" class="form-control" placeholder="" required />
+            <small class="form-text text-muted">Please enter a valid email address.</small>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password:</label>
-            <input id="password" type="password" th:field="*{password}" class="form-control" placeholder=""/>
+            <input id="password" type="password" th:field="*{password}" class="form-control" placeholder=""
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must be at least 8 characters long and contain both uppercase and lowercase letters"
+                   required />
+            <small class="form-text text-muted">Password must be at least 8 characters long and contain both uppercase and lowercase letters.</small>
         </div>
         <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Register!</button>
     </form>
 </div>
+
 
 </body>
 </html>
