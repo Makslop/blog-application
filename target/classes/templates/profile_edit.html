@@ -37,8 +37,8 @@
         }
 
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 175px;
+            height: 175px;
             margin: auto;
             border-radius: 50%;
             background-color: #fff;
@@ -83,53 +83,43 @@
 </header>
 <body>
 <div class="container">
+    <form action="#"
+          th:action="@{'/profile/{id}'(id=${profile.id})}"
+          th:object="${profile}"
+          enctype="multipart/form-data"
+          method="post">
     <div class="container mt-5">
         <div class="post" style="border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <div class="profile-container">
-        <div class="avatar-container">
-            <div class="avatar">
-                <!-- Replace 'path/to/avatar.jpg' with the actual path to the user's avatar -->
-                <img th:src="'/images/' + ${profile.avatarFilePath != null ? profile.avatarFilePath : 'default_avatar.webp'}" alt="Avatar">
+            <div class="profile-container">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <!-- Replace 'path/to/avatar.jpg' with the actual path to the user's avatar -->
+                        <img th:src="@{'/images/' + *{avatarFilePath}}"  alt="Avatar">
+                    </div>
+                    <input id="input-file" type="file" name="file" class="form-control-file btn-info" accept="image/png, image/jpeg, image/jpg, image/bmp" />
+                </div>
+                <div class="info-container">
+                    <label for="profile-first-name" class="form-label">First Name</label>
+                    <input id="profile-first-name" type="text" th:field="*{firstName}" placeholder="First Name" class="form-control"/>
+                    <label for="profile-last-name" class="form-label">Last Name</label>
+                    <input id="profile-last-name" type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control"/>
+                    <label for="profile-gender" class="form-label">Gender</label>
+                    <input id="profile-gender" type="text" th:field="*{gender}" placeholder="Gender" class="form-control"/>
+                </div>
             </div>
-        </div>
-        <div class="info-container">
-            <h2 th:text="${profile.firstName} + ' ' + ${profile.lastName}"></h2>
-            <p class="text-muted mb-2" th:if="${profile.createdAt}">Member since <span th:text="${#temporals.format(profile.createdAt, 'dd MMM yyyy')}"></span></p>
-            <p th:text="'My Gender : ' + ${profile.gender != null ? profile.gender : 'eMail'}"></p>
-        </div>
-    </div>
             <div class="main-info container">
                 <h4>About me:</h4>
-                <p th:text="${profile.aboutMe != null ? profile.aboutMe : 'No information'}">About me</p>
-            </div>
-
-            <div th:if="${#authentication.principal.username == profile.getEmail()}">
-                <a class = "btn-outline-info" th:href="@{'/profile/' + ${profile.id} + '/edit'}">Edit</a>
+                <textarea id="profile-about-me" th:field="*{aboutMe}" class="form-control"></textarea>
             </div>
 
             <hr />
-            <div class = "blogs container">
-                <h4>Recent blogs:</h4>
-                <div class="mx-auto">
-                    <div class="post" th:each="post : ${posts}">
-                        <div class="card mb-4">
-                            <img th:src="@{'/images/' + ${post.imageFilePath}}" class="card-img-top" />
-                            <div class="card-body">
-                                <h5 class="card-title"><a th:href="@{'/posts/' + ${post.id}}" th:text="${post.title}">Title</a></h5>
-                                <p class="card-text" th:text="${post.body}">body text</p>
-                                <p class="card-text"><small class="text-muted" th:text="'Written by ' + ${post.account.firstName}"></small></p>
-                                <p class="card-text"><small class="text-muted" th:text="'Published at ' + ${post.createdAt}"></small></p>
-                                <p class="card-text"><small class="text-muted" th:text="'Updated at ' + ${post.updatedAt}"></small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Update Profile</button>
+        </div>
     </div>
-    </div>
+    </form>
 </div>
 </body>
 </html>
