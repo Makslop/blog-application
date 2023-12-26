@@ -14,7 +14,6 @@
     <style>
         body {
             background-color: #F0F0F0;
-            font-family: Arial, sans-serif;
         }
 
         .profile-container {
@@ -95,7 +94,7 @@
     margin-bottom: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <div class="profile-container">
                 <div class="avatar-container">
-                    <div class="avatar">
+                    <div class="avatar" style="margin-bottom: 10px">
                         <!-- Replace 'path/to/avatar.jpg' with the actual path to the user's avatar -->
                         <img th:src="@{'/images/' + *{avatarFilePath}}"  alt="Avatar">
                     </div>
