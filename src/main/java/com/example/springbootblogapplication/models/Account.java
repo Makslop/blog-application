@@ -36,6 +36,12 @@ public class Account {
 
     LocalDateTime updatedAt;
 
+    String aboutMe;
+
+    String gender;
+
+    String avatarFilePath;
+
     @JsonIgnore
     @OneToMany(mappedBy = "account")
     List<Post> posts;

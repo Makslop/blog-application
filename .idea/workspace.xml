@@ -4,34 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="Migration is working">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post.html" afterDir="false" />
+    <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="profile">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/controllers/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/controllers/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/post_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post_new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="master" />
         <entry key="$PROJECT_DIR$/ProjectJavaFinal" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AlfaJolan"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="517ed1c9-fdc5-45d2-a88b-5a335496d7da" />
+        <option name="url" value="https://github.com/Makslop/blog-application.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,6 +66,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -61,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nurkhan&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Max/Desktop/spring-boot-blog-application-main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -142,6 +155,7 @@
       <workItem from="1703335606888" duration="4645000" />
       <workItem from="1703509281671" duration="188000" />
       <workItem from="1703509579535" duration="11447000" />
+      <workItem from="1703576892533" duration="4538000" />
     </task>
     <task id="LOCAL-00001" summary="Migration is working">
       <option name="closed" value="true" />
@@ -183,7 +197,63 @@
       <option name="project" value="LOCAL" />
       <updated>1703514935308</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <option name="closed" value="true" />
+      <created>1703561122481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703561122481</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Starting profile page">
+      <option name="closed" value="true" />
+      <created>1703562470237</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703562470237</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Profile page is working">
+      <option name="closed" value="true" />
+      <created>1703568794957</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703568794957</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Profile page is working">
+      <option name="closed" value="true" />
+      <created>1703568807962</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703568807962</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Profile page is working">
+      <option name="closed" value="true" />
+      <created>1703568819336</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703568819336</updated>
+    </task>
+    <task id="LOCAL-00011" summary="some refact">
+      <option name="closed" value="true" />
+      <created>1703578686124</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703578686124</updated>
+    </task>
+    <task id="LOCAL-00012" summary="profile">
+      <option name="closed" value="true" />
+      <created>1703583709896</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703583709896</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +273,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="Migration is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration is working" />
+    <MESSAGE value="test" />
+    <MESSAGE value="Starting profile page" />
+    <MESSAGE value="Profile page is working" />
+    <MESSAGE value="some refact" />
+    <MESSAGE value="profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile" />
   </component>
 </project>

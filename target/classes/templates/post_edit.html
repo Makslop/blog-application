@@ -4,14 +4,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog :: Update Post</title>
     <link rel="stylesheet" th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'}">
     <script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'}"></script>
     <script th:src="@{'https://code.jquery.com/jquery-3.6.0.min.js'}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <title>Blog :: Update Post</title>
 </head>
-<body>
+<header style="background-color: #F8F9FA">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Spring Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<body style="background-color: #F0F0F0">
 <div class="container">
-    <a th:href="@{/}">Home</a>
     <form action="#"
           th:action="@{'/posts/{id}'(id=${post.id})}"
           th:object="${post}"
@@ -19,19 +39,19 @@
           method="post">
         <input type="hidden" th:field="*{createdAt}" />
         <h2>Update Post</h2>
-        <img th:src="@{'/images/' + *{imageFilePath}}" height="200px" class="img-fluid" />
-        <div>
-            <input id="input-file" type="file" name="file" class="btn btn-outline-info" accept="image/png, image/jpeg, image/jpg, image/bmp" />
+        <div class="mb-3">
+            <img th:src="@{'/images/' + *{imageFilePath}}" height="200px" class="img-fluid" />
+            <input id="input-file" type="file" name="file" class="form-control-file" accept="image/png, image/jpeg, image/jpg, image/bmp" />
         </div>
-        <div>
-            <label for="new-post-title">Title</label>
-            <input id="new-post-title" type="text" th:field="*{title}" placeholder="Title"/>
+        <div class="mb-3">
+            <label for="new-post-title" class="form-label">Title</label>
+            <input id="new-post-title" type="text" th:field="*{title}" placeholder="Title" class="form-control"/>
         </div>
-        <div>
-            <label for="new-post-body">Body</label>
-            <textarea id="new-post-body" th:field="*{body}"></textarea>
+        <div class="mb-3">
+            <label for="new-post-body" class="form-label">Body</label>
+            <textarea id="new-post-body" th:field="*{body}" class="form-control"></textarea>
         </div>
-        <button type="submit">Update Post</button>
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Update Post</button>
     </form>
 </div>
 

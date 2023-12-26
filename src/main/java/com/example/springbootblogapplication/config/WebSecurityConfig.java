@@ -14,7 +14,7 @@ import static org.springframework.security.web.util.matcher.AntPathRequestMatche
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
-public class WebSecurityConfig {
+public class   WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -31,7 +31,7 @@ public class WebSecurityConfig {
                             .requestMatchers(antMatcher("/rss/**")).permitAll()
                             .requestMatchers(antMatcher("/register/**")).permitAll()
                             .requestMatchers(antMatcher("/posts/**")).permitAll()
-                            .requestMatchers(PathRequest.toH2Console()).permitAll()
+                            .requestMatchers("/profile/**").permitAll()
                             .anyRequest().authenticated();
                 })
                 .formLogin(form -> form
@@ -48,6 +48,8 @@ public class WebSecurityConfig {
                         .logoutSuccessUrl("/")
                         .permitAll()
                 );
+
+
 
         return http.build();
     }
