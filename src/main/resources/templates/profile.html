@@ -106,6 +106,10 @@
                 <p th:text="${profile.aboutMe != null ? profile.aboutMe : 'No information'}">About me</p>
             </div>
 
+            <div th:if="${#authentication.principal.username == profile.getEmail()}">
+                <a class = "btn-outline-info" th:href="@{'/profile/' + ${profile.id} + '/edit'}">Edit</a>
+            </div>
+
             <hr />
             <div class = "blogs container">
                 <h4>Recent blogs:</h4>

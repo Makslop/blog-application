@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="Profile page is working">
+    <list default="true" id="b8eca89d-7299-424a-80ef-6875bbd82f64" name="Changes" comment="some refact">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootblogapplication/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootblogapplication/config/WebSecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +143,7 @@
       <workItem from="1703335606888" duration="4645000" />
       <workItem from="1703509281671" duration="188000" />
       <workItem from="1703509579535" duration="11447000" />
-      <workItem from="1703576892533" duration="1555000" />
+      <workItem from="1703576892533" duration="4289000" />
     </task>
     <task id="LOCAL-00001" summary="Migration is working">
       <option name="closed" value="true" />
@@ -225,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703568819336</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="some refact">
+      <option name="closed" value="true" />
+      <created>1703578686124</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703578686124</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +256,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="Starting profile page" />
     <MESSAGE value="Profile page is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profile page is working" />
+    <MESSAGE value="some refact" />
+    <option name="LAST_COMMIT_MESSAGE" value="some refact" />
   </component>
 </project>
