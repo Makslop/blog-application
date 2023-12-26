@@ -36,6 +36,8 @@ public class Account {
 
     LocalDateTime updatedAt;
 
+    String aboutMe;
+
     @JsonIgnore
     @OneToMany(mappedBy = "account")
     List<Post> posts;

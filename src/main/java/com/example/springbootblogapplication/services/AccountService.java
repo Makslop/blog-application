@@ -2,6 +2,7 @@ package com.example.springbootblogapplication.services;
 
 import com.example.springbootblogapplication.models.Account;
 import com.example.springbootblogapplication.models.Authority;
+import com.example.springbootblogapplication.models.Post;
 import com.example.springbootblogapplication.repositories.AccountRepository;
 import com.example.springbootblogapplication.repositories.AuthorityRepository;
 import lombok.RequiredArgsConstructor;
@@ -39,4 +40,9 @@ public class AccountService {
     public Optional<Account> findOneByEmail(String email) {
         return accountRepository.findOneByEmailIgnoreCase(email);
     }
+
+    public Optional<Account> getById(Long id) {
+        return accountRepository.findById(id);
+    }
+
 }
