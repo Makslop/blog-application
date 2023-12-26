@@ -1,7 +1,6 @@
 
 package com.example.springbootblogapplication.config;
 
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -32,8 +31,7 @@ public class WebSecurityConfig {
                             .requestMatchers(antMatcher("/rss/**")).permitAll()
                             .requestMatchers(antMatcher("/register/**")).permitAll()
                             .requestMatchers(antMatcher("/posts/**")).permitAll()
-                            .requestMatchers(antMatcher("/posts/*/comments/**")).authenticated()
-                            .requestMatchers(PathRequest.toH2Console()).permitAll()
+                            .requestMatchers(antMatcher("/posts/**/comments/**")).authenticated()
                             .anyRequest().authenticated();
                 })
                 .formLogin(form -> form

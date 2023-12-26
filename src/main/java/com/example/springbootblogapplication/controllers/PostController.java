@@ -255,7 +255,6 @@ public class PostController {
             return "404";
         }
     }
-    // PostController.java
 
     @GetMapping("/posts/{postId}/comments/{commentId}/edit")
     @PreAuthorize("isAuthenticated()")

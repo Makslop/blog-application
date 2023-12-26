@@ -6,26 +6,77 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog :: Post</title>
     <link rel="stylesheet" th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'}">
     <script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'}"></script>
     <script th:src="@{'https://code.jquery.com/jquery-3.6.0.min.js'}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <title>Blog :: Post</title>
 </head>
-<body>
+<header style="background-color: #F8F9FA">
     <div class="container">
-        <a th:href="@{/}">Home</a>
-        <div class="post">
-            <img th:src="@{'/images/' + ${post.imageFilePath}}" height="200px" class="img-fluid" />
-            <h2 th:text="${post.title}">Title</h2>
-            <h5 th:text="'Created at ' + ${post.createdAt}">Created At</h5>
-            <h5 th:text="'Updated at ' + ${post.updatedAt}">Updated At</h5>
-            <p th:text="${post.body}">body text</p>
-        </div>
-        <ul sec:authorize="isAuthenticated()">
-            <li><a th:href="@{'/posts/' + ${post.id} + '/edit'}">Edit</a></li>
-            <li><a th:href="@{'/posts/' + ${post.id} + '/delete'}">Delete</a></li>
-        </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Spring Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
+</header>
+<body style="background-color: #F0F0F0">
+<div class="container mt-5">
+    <div class="post" style="border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <img th:src="@{'/images/' + ${post.imageFilePath}}" height="200px" class="img-fluid" />
+        <h2 th:text="${post.title}">Title</h2>
+        <h5 th:text="'Created at ' + ${post.createdAt}">Created At</h5>
+        <h5 th:text="'Updated at ' + ${post.updatedAt}">Updated At</h5>
+        <p th:text="${post.body}">body text</p>
+    </div>
+    <ul class="nav" sec:authorize="isAuthenticated()" style="margin-bottom: 20px">
+        <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/edit'}">Edit</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{'/posts/' + ${post.id} + '/delete'}">Delete</a></li>
+    </ul>
+    <div th:each="comment : ${post.comments}" style="margin-bottom: 20px">
+        <div class="card mt-3">
+            <div class="card-body">
+                <p th:text="${comment.text}"></p>
+                <p th:text="${comment.createdAt}"></p>
+
+                <p th:text="'Author: ' + ${comment.account.email}"></p>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#commentForm" aria-expanded="false" aria-controls="commentForm" style="margin-top: 20px; margin-bottom: 20px">
+        Write a Comment
+    </button>
+    <div class="collapse mt-3" id="commentForm" style="margin-bottom: 20px">
+        <form th:action="@{'/posts/' + ${post.id} + '/comments/new'}" method="post" sec:authorize="isAuthenticated()">
+            <div class="mb-3">
+                <label for="commentTextCollapse" class="form-label">Add a Comment:</label>
+                <textarea class="form-control" id="commentTextCollapse" name="commentText" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </form>
+    </div>
+
+</div>
 
 </body>
 </html>
