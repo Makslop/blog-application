@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css'}">
+    <script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'}"></script>
+    <script th:src="@{'https://code.jquery.com/jquery-3.6.0.min.js'}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <title>Blog :: Profile</title>
+    <style>
+        body {
+            background-color: #F0F0F0;
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-container {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #fff;
+            margin-bottom: 1%;
+        }
+
+        .avatar-container {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db;
+            color: #fff;
+            max-width: 200px;
+        }
+
+        .avatar {
+            width: 175px;
+            height: 175px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-container {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .info-container h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<header style="background-color: #F8F9FA">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Spring Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<body>
+<div class="container">
+    <form action="#"
+          th:action="@{'/profile/{id}'(id=${profile.id})}"
+          th:object="${profile}"
+          enctype="multipart/form-data"
+          method="post">
+    <div class="container mt-5">
+        <div class="post" style="border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <div class="profile-container">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <!-- Replace 'path/to/avatar.jpg' with the actual path to the user's avatar -->
+                        <img th:src="@{'/images/' + *{avatarFilePath}}"  alt="Avatar">
+                    </div>
+                    <input id="input-file" type="file" name="file" class="form-control-file btn-info" accept="image/png, image/jpeg, image/jpg, image/bmp" />
+                </div>
+                <div class="info-container">
+                    <label for="profile-first-name" class="form-label">First Name</label>
+                    <input id="profile-first-name" type="text" th:field="*{firstName}" placeholder="First Name" class="form-control"/>
+                    <label for="profile-last-name" class="form-label">Last Name</label>
+                    <input id="profile-last-name" type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control"/>
+                    <label for="profile-gender" class="form-label">Gender</label>
+                    <input id="profile-gender" type="text" th:field="*{gender}" placeholder="Gender" class="form-control"/>
+                </div>
+            </div>
+            <div class="main-info container">
+                <h4>About me:</h4>
+                <textarea id="profile-about-me" th:field="*{aboutMe}" class="form-control"></textarea>
+            </div>
+
+            <hr />
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Update Profile</button>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>

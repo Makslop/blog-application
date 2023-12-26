@@ -25,6 +25,7 @@ public class RegisterController {
 
     @PostMapping("/register")
     public String registerNewUser(@ModelAttribute Account account) {
+        account.setGender("F14A-TOMCAT");
         accountService.save(account);
         return "redirect:/";
     }
