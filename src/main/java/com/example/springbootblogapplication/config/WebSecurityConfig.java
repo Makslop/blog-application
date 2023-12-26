@@ -31,7 +31,8 @@ public class WebSecurityConfig {
                             .requestMatchers(antMatcher("/rss/**")).permitAll()
                             .requestMatchers(antMatcher("/register/**")).permitAll()
                             .requestMatchers(antMatcher("/posts/**")).permitAll()
-                            .requestMatchers(PathRequest.toH2Console()).permitAll()
+                            .requestMatchers(antMatcher("/profile/**")).permitAll()
+                            .requestMatchers(antMatcher("/posts/**/comments/**")).authenticated()
                             .anyRequest().authenticated();
                 })
                 .formLogin(form -> form
