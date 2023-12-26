@@ -30,7 +30,9 @@ public class PostService {
         post.setUpdatedAt(LocalDateTime.now());
         return postRepository.save(post);
     }
-
+    public List<Post> getUserPosts(Long id){
+        return postRepository.findByAccountId(id);
+    }
     public void delete(Post post) {
         postRepository.delete(post);
     }

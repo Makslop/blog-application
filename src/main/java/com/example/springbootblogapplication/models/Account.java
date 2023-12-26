@@ -38,6 +38,10 @@ public class Account {
 
     String aboutMe;
 
+    String gender;
+
+    String avatarFilePath;
+
     @JsonIgnore
     @OneToMany(mappedBy = "account")
     List<Post> posts;
